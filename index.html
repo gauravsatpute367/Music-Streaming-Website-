@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Svara is a little home for original Hindi, Marathi, and English music."
+    />
+    <meta name="theme-color" content="#11100f" />
+    <title>Svara — Find your frequency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="Svara home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>svara<span class="brand-period">.</span></span>
+        </a>
+
+        <div class="side-label">YOUR SPACE</div>
+        <nav class="side-nav" aria-label="Main navigation">
+          <button class="nav-link active" data-view="discover">
+            <span class="nav-icon">⌂</span> Discover
+          </button>
+          <button class="nav-link" data-view="trending">
+            <span class="nav-icon">↗</span> Trending now
+          </button>
+          <button class="nav-link" data-view="favorites">
+            <span class="nav-icon">♡</span> Your favorites
+          </button>
+        </nav>
+
+        <div class="library-heading">
+          <span class="side-label">YOUR LIBRARY</span>
+          <button class="icon-button add-playlist" id="new-playlist" aria-label="Create a playlist" title="Create a playlist">+</button>
+        </div>
+        <div class="library-list">
+          <button class="library-item" data-mood="Easy mornings"><span class="library-dot dot-peach"></span> Easy mornings</button>
+          <button class="library-item" data-mood="Soft focus"><span class="library-dot dot-blue"></span> Soft focus</button>
+          <button class="library-item" data-mood="After hours"><span class="library-dot dot-purple"></span> After hours</button>
+        </div>
+
+        <div class="sidebar-bottom">
+          <div class="mini-note">
+            <div class="note-spark">✳</div>
+            <div>
+              <strong>Made for curious ears</strong>
+              <p>Every demo here is an original sound.</p>
+            </div>
+          </div>
+          <button class="profile-button" id="profile-button">
+            <span class="avatar">S</span>
+            <span class="profile-copy"><strong>Sound explorer</strong><small>Free listener</small></span>
+            <span class="profile-more">···</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="icon-button mobile-menu" id="menu-button" aria-label="Toggle menu">☰</button>
+          <div class="history-buttons" aria-label="Page history">
+            <button class="icon-button history-button" id="back-button" aria-label="Back">‹</button>
+            <button class="icon-button history-button" id="forward-button" aria-label="Forward">›</button>
+          </div>
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="search-input" type="search" placeholder="Songs, artists, moods..." autocomplete="off" />
+            <kbd>⌘ K</kbd>
+          </label>
+          <div class="topbar-actions">
+            <span class="live-status"><span class="live-dot"></span> LIVE SESSION</span>
+            <button class="avatar top-avatar" aria-label="Listener profile">S</button>
+          </div>
+        </header>
+
+        <div class="page-scroll">
+          <section class="welcome-row">
+            <div>
+              <div class="eyebrow"><span class="live-dot"></span> YOUR LITTLE CORNER OF SOUND</div>
+              <h1 id="greeting">Good evening<span class="heading-period">.</span></h1>
+              <p class="welcome-subtitle">A fresh frequency for wherever you are.</p>
+            </div>
+            <div class="date-chip"><span>◷</span><span id="current-date">TODAY</span></div>
+          </section>
+
+          <section class="hero-card" aria-label="Featured song">
+            <div class="hero-grain"></div>
+            <div class="hero-copy">
+              <div class="hero-kicker"><span class="hero-spark">✳</span> SVARA ORIGINALS <span class="hero-divider"></span> VOL. 01</div>
+              <h2>Somewhere<br />between <em>here</em><br />&amp; the feeling.</h2>
+              <p>A little collection of sounds to come back to yourself.</p>
+              <div class="hero-actions">
+                <button class="button button-light" id="hero-play"><span>▶</span> Play the mix</button>
+                <button class="button button-ghost" id="hero-explore">Explore collection <span>↗</span></button>
+              </div>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="orb orb-one"></div>
+              <div class="orb orb-two"></div>
+              <div class="orb orb-three"></div>
+              <div class="hero-art-lines"></div>
+              <div class="hero-art-caption">SOUND<br />OF NOW</div>
+              <div class="hero-art-index">001 — ∞</div>
+            </div>
+            <div class="hero-bottom"><span>CURATED FOR THE IN-BETWEEN</span><span class="hero-bottom-right"><span class="live-dot"></span> UPDATED LIVE <span id="updated-time">JUST NOW</span></span></div>
+          </section>
+
+          <section class="quick-picks" aria-label="Quick picks">
+            <button class="quick-pick quick-sunrise" data-mood="Easy mornings"><span class="quick-icon">☼</span><span><small>MOOD</small><strong>Easy mornings</strong></span><span class="quick-arrow">↗</span></button>
+            <button class="quick-pick quick-focus" data-mood="Soft focus"><span class="quick-icon">◌</span><span><small>MOOD</small><strong>Soft focus</strong></span><span class="quick-arrow">↗</span></button>
+            <button class="quick-pick quick-night" data-mood="After hours"><span class="quick-icon">☾</span><span><small>MOOD</small><strong>After hours</strong></span><span class="quick-arrow">↗</span></button>
+          </section>
+
+          <section class="music-section" id="music-section">
+            <div class="section-heading">
+              <div>
+                <div class="eyebrow section-eyebrow">A GOOD PLACE TO START</div>
+                <h2 id="section-title">Made for this moment<span>.</span></h2>
+              </div>
+              <button class="text-button" id="see-all">See all <span>↗</span></button>
+            </div>
+            <div class="filter-row" role="group" aria-label="Filter songs by language">
+              <button class="filter-chip selected" data-language="All">All sounds</button>
+              <button class="filter-chip" data-language="Hindi">Hindi <span>हिंदी</span></button>
+              <button class="filter-chip" data-language="Marathi">Marathi <span>मराठी</span></button>
+              <button class="filter-chip" data-language="English">English</button>
+            </div>
+            <div class="track-grid" id="track-grid" aria-live="polite"></div>
+            <div class="empty-state" id="empty-state" hidden>
+              <span>◌</span>
+              <h3>No tracks found just yet</h3>
+              <p>Try another search or language.</p>
+              <button class="text-button" id="clear-filters">Clear filters ↗</button>
+            </div>
+          </section>
+
+          <section class="fresh-section">
+            <div class="fresh-card">
+              <div class="fresh-mark">✳</div>
+              <div><div class="eyebrow">A NOTE FROM SVARA</div><h2>Small songs.<br /><em>Big feelings.</em></h2></div>
+              <p>This is a growing collection of original sound sketches. Press play to hear music made right here in your browser—no samples, no borrowed tracks, just little new melodies.</p>
+              <button class="text-button" id="radio-button">Surprise me <span>↗</span></button>
+            </div>
+          </section>
+          <footer class="footer"><span>Made with a little bit of sound <span class="footer-heart">♥</span></span><span>DEMO LISTENING ROOM · ORIGINAL BROWSER-GENERATED AUDIO</span></footer>
+        </div>
+      </main>
+    </div>
+
+    <section class="player" aria-label="Audio player">
+      <div class="player-track">
+        <div class="mini-cover cover-amber" id="player-cover"><span>✳</span></div>
+        <div class="player-track-copy"><strong id="player-title">Pick a little something</strong><span id="player-artist">Your next favorite is waiting</span></div>
+        <button class="icon-button like-button player-like" id="player-like" aria-label="Like this track">♡</button>
+      </div>
+      <div class="player-center">
+        <div class="player-controls">
+          <button class="control-button shuffle-button" id="shuffle-button" aria-label="Toggle shuffle" title="Shuffle">⤨</button>
+          <button class="control-button" id="previous-button" aria-label="Previous track">|‹</button>
+          <button class="play-button" id="play-button" aria-label="Play">▶</button>
+          <button class="control-button" id="next-button" aria-label="Next track">›|</button>
+          <button class="control-button repeat-button" id="repeat-button" aria-label="Toggle repeat" title="Repeat">↻</button>
+        </div>
+        <div class="progress-row">
+          <span id="elapsed-time">0:00</span>
+          <input id="progress-slider" class="progress-slider" type="range" min="0" max="100" value="0" aria-label="Track progress" />
+          <span id="total-time">0:00</span>
+        </div>
+      </div>
+      <div class="player-extra">
+        <span class="audio-live"><span class="live-dot"></span> LIVE AUDIO</span>
+        <button class="control-button volume-icon" id="volume-icon" aria-label="Mute">◖</button>
+        <input id="volume-slider" class="volume-slider" type="range" min="0" max="100" value="70" aria-label="Volume" />
+        <button class="control-button queue-button" id="queue-button" aria-label="Show play queue" title="Current collection">☷</button>
+      </div>
+    </section>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="mobile-backdrop" id="mobile-backdrop"></div>
+  </body>
+</html>
